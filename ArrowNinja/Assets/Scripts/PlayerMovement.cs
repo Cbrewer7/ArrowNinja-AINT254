@@ -8,18 +8,22 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerSpeed = 5.0f;
 
-    
+    public float jumpHeight = 5.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Player can move left to right on a single axis
         transform.Translate(0, 0, Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
+
+        // Player can jump using spacebar
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+        }
     }
 }
