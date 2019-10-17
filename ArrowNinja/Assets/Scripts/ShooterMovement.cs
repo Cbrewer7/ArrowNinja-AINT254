@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShooterMovement : MonoBehaviour
 {
     Rigidbody rb;
-    public float shooterSpeed = 5.0f;
+    public float shooterSpeed = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,29 +16,31 @@ public class ShooterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //The Objective of this is to get the movement with the arrow keys
+        //and not have the player object move with the same input
+        if (Input.GetKey("left"))
         {
-            Vector3 position = this.transform.position;
-            position.z--;
-            this.transform.position = position;
+            rb.velocity = new Vector3(0, 0, -10);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKey("right"))
         {
-            Vector3 position = this.transform.position;
-            position.z++;
-            this.transform.position = position;
+            rb.velocity = new Vector3(0, 0, 10);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKey("up"))
         {
-            Vector3 position = this.transform.position;
-            position.y++;
-            this.transform.position = position;
+            rb.velocity = new Vector3(0, 10, 0);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey("down"))
         {
-            Vector3 position = this.transform.position;
-            position.y--;
-            this.transform.position = position;
+            rb.velocity = new Vector3(0, -10, 0);
         }
+        else
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+        
+        //transform.Translate(Input.GetAxis("Horizontal1"), 0, 0 * Time.deltaTime * shooterSpeed);
+        //transform.Translate(0, Input.GetAxis("Vertical1"), 0 * Time.deltaTime * shooterSpeed);
+        //rb.AddForce(new Vector3(0, 0, 0), ForceMode.Impulse);
     }
 }
