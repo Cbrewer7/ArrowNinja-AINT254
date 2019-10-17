@@ -52,10 +52,6 @@ public class FireForward : MonoBehaviour
             //Rigidbody rb = arrow.GetComponent<Rigidbody>();
             //rb.velocity = Input.mousePosition * shootForce;
             
-
-
-
-
         }
     }
 }

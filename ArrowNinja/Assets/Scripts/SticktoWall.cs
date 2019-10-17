@@ -12,6 +12,7 @@ public class SticktoWall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -20,8 +21,18 @@ public class SticktoWall : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        //Freeze arrow position when hits wall
+        if(collision.gameObject.tag == "Wall")
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+
+        //Doesn't Work
+        if(collision.gameObject.tag == "Arrow")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
