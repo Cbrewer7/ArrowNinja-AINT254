@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\FireForward.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\ShooterMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Gaming PC/Documents/GitHub/ArrowNinja-AINT254/ArrowNinja/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
