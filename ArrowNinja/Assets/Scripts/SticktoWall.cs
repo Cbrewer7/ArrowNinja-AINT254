@@ -21,18 +21,12 @@ public class SticktoWall : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider collision)
     {
         //Freeze arrow position when hits wall
-        if(collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
-
-        //Doesn't Work
-        if(collision.gameObject.tag == "Arrow")
-        {
-            Destroy(collision.gameObject);
         }
     }
 }
