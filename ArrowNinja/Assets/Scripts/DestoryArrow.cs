@@ -18,6 +18,7 @@ public class DestoryArrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Destroys the second arrow after hitting the first already stuck in the wall
         if (collision.gameObject.tag == "StuckArrow")
         {
             Destroy(gameObject);

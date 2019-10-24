@@ -28,6 +28,7 @@ public class SticktoWall : MonoBehaviour
         {
             rb.constraints = RigidbodyConstraints.FreezeAll;
 
+            //Changing the tag of the arrow if it is stuck on the wall so the new arrow breaks when it hits
             transform.gameObject.tag = "StuckArrow";
         }
     }
