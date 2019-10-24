@@ -18,7 +18,7 @@ public class DestoryArrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Arrow")
+        if (collision.gameObject.tag == "StuckArrow")
         {
             Destroy(gameObject);
         }

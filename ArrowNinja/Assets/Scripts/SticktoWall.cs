@@ -27,6 +27,8 @@ public class SticktoWall : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             rb.constraints = RigidbodyConstraints.FreezeAll;
+
+            transform.gameObject.tag = "StuckArrow";
         }
     }
 }
