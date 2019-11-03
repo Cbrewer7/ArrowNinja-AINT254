@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             numberJumps = 1;
         }
-        if (collision.gameObject.tag == "Arrow")
+        if (collision.gameObject.tag == "StuckArrow")
         {
             numberJumps = 1;
         }
