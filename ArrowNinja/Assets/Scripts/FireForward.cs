@@ -10,21 +10,27 @@ public class FireForward : MonoBehaviour
     public float speed = 300f;
     //public float mouseClick;
 
-    float pokeForce;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int currentArrows = 5;
 
     // Update is called once per frame
     void Update()
+    {
+        if (currentArrows >= 1)
+        {
+
+            ShootArrow();
+        }
+    }
+
+    void ShootArrow()
     {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            currentArrows--;
+            Debug.Log(currentArrows);
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -51,7 +57,7 @@ public class FireForward : MonoBehaviour
             //    Instantiate(arrow, transform.position, Quaternion.identity);
             //Rigidbody rb = arrow.GetComponent<Rigidbody>();
             //rb.velocity = Input.mousePosition * shootForce;
-            
+
         }
     }
 }

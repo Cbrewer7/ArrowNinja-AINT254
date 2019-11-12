@@ -7,6 +7,8 @@ public class ShooterMovement : MonoBehaviour
     Rigidbody rb;
     public float shooterSpeed = 2.0f;
 
+    Vector3 mousePosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,9 +40,10 @@ public class ShooterMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(0, 0, 0);
         }
-        
+
         //transform.Translate(Input.GetAxis("Horizontal1"), 0, 0 * Time.deltaTime * shooterSpeed);
         //transform.Translate(0, Input.GetAxis("Vertical1"), 0 * Time.deltaTime * shooterSpeed);
         //rb.AddForce(new Vector3(0, 0, 0), ForceMode.Impulse);
+
     }
 }
