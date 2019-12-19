@@ -26,21 +26,25 @@ public class FireForward : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //Get Mouse Position
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            //Lose 1 arrow
             currentArrows--;
             Debug.Log(currentArrows);
 
+            //If raycast is hits (information on raycast hit)
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.rigidbody != null)
                 {
-                    //arrow = Instantiate(arrow, transform.position, transform.rotation);
-                    //hit.rigidbody.AddForceAtPosition(ray.direction * speed, hit.point);
                     Debug.Log(Input.mousePosition);
                     Debug.Log(hit.transform.name);
+
+                    //Creates new arrow gameobject
                     GameObject newArrow = Instantiate(arrow, transform.position, Quaternion.identity) as GameObject;
+                    //Assign rigidbody to allow force to be added to the arrow into the correct direction
                     Rigidbody newArrowRidgedbody = newArrow.GetComponent<Rigidbody>();
                     newArrowRidgedbody.AddForce(Vector3.left * speed);
                 }
@@ -51,13 +55,6 @@ public class FireForward : MonoBehaviour
                     newArrowRidgedbody.AddForce(Vector3.left * speed);
                 }
             }
-
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //if (Physics.Raycast(ray))
-            //    Instantiate(arrow, transform.position, Quaternion.identity);
-            //Rigidbody rb = arrow.GetComponent<Rigidbody>();
-            //rb.velocity = Input.mousePosition * shootForce;
-
         }
     }
 }
