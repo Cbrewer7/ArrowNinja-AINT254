@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ArrowPlayerCol.cs" />
     <Compile Include="Assets\Scripts\DestoryArrow.cs" />
     <Compile Include="Assets\Scripts\FireForward.cs" />
+    <Compile Include="Assets\Scripts\Lives.cs" />
     <Compile Include="Assets\Scripts\OldJump.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawn.cs" />

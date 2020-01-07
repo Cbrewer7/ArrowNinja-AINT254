@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpikeCollision : MonoBehaviour
 {
-    [SerializeField] private int lives = 3;
+    public static int lives = 3;
 
     void FixedUpdate()
     {
@@ -16,13 +16,15 @@ public class SpikeCollision : MonoBehaviour
         }
     }
 
+    public Transform respawnPoint;
+    Transform respawn;
+
     //Spike Collision
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "SpikeObject")
         {
-            lives--;
-            
+           
         }
     }
 

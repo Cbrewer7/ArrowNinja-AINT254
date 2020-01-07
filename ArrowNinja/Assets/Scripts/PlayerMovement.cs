@@ -18,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = 14.0f;
     [SerializeField] private float jumpForce = 10.0f;
 
-    Transform respawn;
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -80,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Player Respawn
     public Transform respawnPoint;
-
+    Transform respawn;
     private void OnTriggerEnter(Collider other)
     {
         controller.enabled = false;
