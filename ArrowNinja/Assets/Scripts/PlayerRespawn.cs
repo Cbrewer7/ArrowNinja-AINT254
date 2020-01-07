@@ -28,8 +28,6 @@ public class PlayerRespawn : MonoBehaviour
         {
             contact = true;
             //player.transform.SetPositionAndRotation(respawnLoc, startRotation);
-
-            
         }
     }
 
