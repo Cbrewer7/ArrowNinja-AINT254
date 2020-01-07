@@ -18,16 +18,18 @@ public class PlayerRespawn : MonoBehaviour
     //    }
     //}
 
-    Vector3 respawnLoc = new Vector3(-0.3f, 0.5f, 0f);
+    //Vector3 respawnLoc = new Vector3(-0.3f, 0.5f, 0f);
 
-    Quaternion startRotation = Quaternion.Euler(Vector3.zero);
+    //Quaternion startRotation = Quaternion.Euler(Vector3.zero);
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             contact = true;
-            player.transform.SetPositionAndRotation(respawnLoc, startRotation);
+            //player.transform.SetPositionAndRotation(respawnLoc, startRotation);
+
+            
         }
     }
 

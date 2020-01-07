@@ -97,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    //Player Respawn
     public Transform respawnPoint;
 
     private void OnTriggerEnter(Collider other)

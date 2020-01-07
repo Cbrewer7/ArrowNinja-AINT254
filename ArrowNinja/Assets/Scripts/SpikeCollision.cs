@@ -7,7 +7,7 @@ public class SpikeCollision : MonoBehaviour
 {
     [SerializeField] private int lives = 3;
 
-    void Update()
+    void FixedUpdate()
     {
         //Display Game Over
         if (lives <= 0)
@@ -23,6 +23,14 @@ public class SpikeCollision : MonoBehaviour
         {
             lives--;
             
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "SpikeObject")
+        {
+            lives--;
         }
     }
 

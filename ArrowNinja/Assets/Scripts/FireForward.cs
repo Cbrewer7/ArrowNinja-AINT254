@@ -28,7 +28,9 @@ public class FireForward : MonoBehaviour
 
     void ShootArrow()
     {
-        if (Input.GetMouseButtonDown(0))
+       
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
             //Get Mouse Position
             RaycastHit hit;
