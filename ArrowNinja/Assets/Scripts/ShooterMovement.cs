@@ -7,8 +7,6 @@ public class ShooterMovement : MonoBehaviour
     Rigidbody rb;
     public float shooterSpeed = 2.0f;
 
-    Vector3 mousePosition;
-
     // Start is called before the first frame update
     void Start()
     {

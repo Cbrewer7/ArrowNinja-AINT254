@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class DestoryArrow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int numOfjumps = 2;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,5 +13,24 @@ public class DestoryArrow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "SpikeObject")
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            numOfjumps--;
+
+            if (numOfjumps == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
+    private void PlayerInteraction()
+    {
+
     }
 }

@@ -12,12 +12,16 @@ public class FireForward : MonoBehaviour
 
     public int currentArrows = 5;
 
+    private void Start()
+    {
+        Cursor.lockState =  CursorLockMode.Locked;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (currentArrows >= 1)
         {
-
             ShootArrow();
         }
     }
@@ -32,7 +36,7 @@ public class FireForward : MonoBehaviour
 
             //Lose 1 arrow
             currentArrows--;
-            Debug.Log(currentArrows);
+            //Debug.Log(currentArrows);
 
             //If raycast is hits (information on raycast hit)
             if (Physics.Raycast(ray, out hit))
@@ -40,17 +44,11 @@ public class FireForward : MonoBehaviour
                 if (hit.rigidbody != null)
                 {
                     Debug.Log(Input.mousePosition);
-                    Debug.Log(hit.transform.name);
+                    //Debug.Log(hit.transform.name);
 
                     //Creates new arrow gameobject
                     GameObject newArrow = Instantiate(arrow, transform.position, Quaternion.identity) as GameObject;
                     //Assign rigidbody to allow force to be added to the arrow into the correct direction
-                    Rigidbody newArrowRidgedbody = newArrow.GetComponent<Rigidbody>();
-                    newArrowRidgedbody.AddForce(Vector3.left * speed);
-                }
-                else
-                {
-                    GameObject newArrow = Instantiate(arrow, transform.position, Quaternion.identity) as GameObject;
                     Rigidbody newArrowRidgedbody = newArrow.GetComponent<Rigidbody>();
                     newArrowRidgedbody.AddForce(Vector3.left * speed);
                 }
