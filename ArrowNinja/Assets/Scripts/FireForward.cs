@@ -7,7 +7,7 @@ public class FireForward : MonoBehaviour
 
     public GameObject arrow;
     //public GameObject arrowSpawn;
-    public float speed = 300f;
+    public float speed = 500f;
     //public float mouseClick;
 
     public int currentArrows = 5;
@@ -33,7 +33,7 @@ public class FireForward : MonoBehaviour
     {
        
 
-        if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFire)
+        if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFire && Ammo.ammmoAmount > 0)
         {
             //Prevents rapid fire by giving a next shot delay
             nextFire = Time.time + fireRate;
@@ -44,6 +44,9 @@ public class FireForward : MonoBehaviour
 
             //Lose 1 arrow
             currentArrows--;
+
+            Ammo.ammmoAmount -= 1;
+
             //Debug.Log(currentArrows);
 
             //If raycast is hits (information on raycast hit)

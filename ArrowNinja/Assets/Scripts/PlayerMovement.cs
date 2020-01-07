@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController controller;
 
-    [SerializeField] private float verticalVelocity;
+    public static float verticalVelocity;
     [SerializeField] private float gravity = 14.0f;
     [SerializeField] private float jumpForce = 10.0f;
 
@@ -60,30 +60,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Player can move left to right on a single axis
-        //transform.Translate(0, 0, Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed);
-
         HorizontalMovement();
         JumpMechanic();
-
-        //ogJumpMechanic();
     }
-
-    void ogJumpMechanic()
-    {
-        if (numberJumps != 0)
-        {
-            // Player can jump using spacebar
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                numberJumps = 0;
-                rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
-            }
-        }
-    }
-
     
-
     private void OnCollisionEnter(Collision collision)
     {
         //Resupply the number of jumps the player has once it touches the floor or an arrow
@@ -104,19 +84,22 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         controller.enabled = false;
+        verticalVelocity = 0f;
 
         if (other.gameObject.tag == "SpikeObject")
         {
-            Debug.Log("why is this not working?");
             respawn.position = respawnPoint.transform.position;
             controller.enabled = true;
 
         }
         if (other.gameObject.tag == "ArrowPickup")
         {
-            Destroy(other.gameObject);
+            Debug.Log("Picked up arrow");
             controller.enabled = true;
-
+        }
+        if (other.gameObject.tag == "RespawnSet")
+        {
+            controller.enabled = true;
         }
     }
 }
