@@ -26,12 +26,18 @@ public class FireForward : MonoBehaviour
         }
     }
 
+    public float fireRate = 0.5f;
+    private float nextFire = 0f;
+
     void ShootArrow()
     {
        
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFire)
         {
+            //Prevents rapid fire by giving a next shot delay
+            nextFire = Time.time + fireRate;
+
             //Get Mouse Position
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);

@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - StuckArrow
   - SpikeObject
+  - ArrowPickup
   layers:
   - Default
   - TransparentFX

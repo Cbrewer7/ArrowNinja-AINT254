@@ -112,5 +112,11 @@ public class PlayerMovement : MonoBehaviour
             controller.enabled = true;
 
         }
+        if (other.gameObject.tag == "ArrowPickup")
+        {
+            Destroy(other.gameObject);
+            controller.enabled = true;
+
+        }
     }
 }
