@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowPlayerCol : MonoBehaviour
 {
-    private int timeJumped = 2;
+    private int timeJumped = 3;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -13,13 +13,14 @@ public class ArrowPlayerCol : MonoBehaviour
             timeJumped--;
 
             //when the player Initially jumps onto the arrow
-            if(timeJumped == 1)
+            if(timeJumped >= 1)
             {
-                PlayerMovement.verticalVelocity = 12.0f;
+                PlayerMovement.verticalVelocity = 10.0f;
             }
+            //After the player jumps onto the arrow
             else
             {
-                PlayerMovement.verticalVelocity = 20.0f;
+                PlayerMovement.verticalVelocity = 15.0f;
             }
         }
     }

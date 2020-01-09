@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestoryArrow : MonoBehaviour
 {
-    private int numOfjumps = 2;
+    private int numOfjumps = 3;
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -6,8 +6,8 @@ public class FireForward : MonoBehaviour
 {
 
     public GameObject arrow;
-    public float speed = 500f;
-    public int currentArrows = 5;
+    public float speed = 600f;
+    public static int currentArrows = 10;
 
     //Lock Cursor to centre screen
     private void Start()

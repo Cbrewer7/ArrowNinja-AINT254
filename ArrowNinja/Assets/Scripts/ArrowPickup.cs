@@ -9,6 +9,7 @@ public class ArrowPickup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Ammo.ammmoAmount += 10;
+            FireForward.currentArrows += 10;
             Destroy(gameObject);
         }
     }

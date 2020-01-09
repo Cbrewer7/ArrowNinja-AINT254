@@ -66,16 +66,18 @@
     <Compile Include="Assets\Scripts\ArrowPickup.cs" />
     <Compile Include="Assets\Scripts\ArrowPlayerCol.cs" />
     <Compile Include="Assets\Scripts\DestoryArrow.cs" />
+    <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\FireForward.cs" />
     <Compile Include="Assets\Scripts\Lives.cs" />
-    <Compile Include="Assets\Scripts\OldJump.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerRespawn.cs" />
     <Compile Include="Assets\Scripts\SetRespawnPoint.cs" />
     <Compile Include="Assets\Scripts\ShooterMovement.cs" />
     <Compile Include="Assets\Scripts\SpikeCollision.cs" />
     <Compile Include="Assets\Scripts\SpikeSpawnpoint.cs" />
     <Compile Include="Assets\Scripts\SticktoWall.cs" />
+    <None Include="Assets\Assets\Materials\Glow.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/C-bre/Documents/GitHub/ArrowNinja-AINT254/ArrowNinja/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

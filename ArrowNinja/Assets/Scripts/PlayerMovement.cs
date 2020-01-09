@@ -7,9 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     [SerializeField] private float playerSpeed = 5.0f;
-
-    public float jumpHeight = 5.0f;
-
+    
     public int numberJumps = 1;
 
     private CharacterController controller;
@@ -25,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
         respawn = GetComponent<Transform>();
     }
 
+    //Creates a smoother jump by lifting the player through velocity
+    //in comparison to force.
     private void JumpMechanic()
     {
         if (controller.isGrounded)
@@ -73,6 +73,21 @@ public class PlayerMovement : MonoBehaviour
         {
             numberJumps = 1;
         }
+        if (collision.gameObject.tag == "SpikeObject")
+        {
+            respawn.position = respawnPoint.transform.position;
+            controller.enabled = true;
+
+        }
+        if (collision.gameObject.tag == "ArrowPickup")
+        {
+            Debug.Log("Picked up arrow");
+            controller.enabled = true;
+        }
+        if (collision.gameObject.tag == "RespawnSet")
+        {
+            controller.enabled = true;
+        }
     }
 
 
@@ -100,4 +115,6 @@ public class PlayerMovement : MonoBehaviour
             controller.enabled = true;
         }
     }
+
+    
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5354398506404468279}
   - component: {fileID: -7091536704574179639}
   - component: {fileID: 8356515981480337097}
+  - component: {fileID: -4912500418548029211}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Arrow
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ff322e50b5cf3e41b1308a9a4619a74, type: 2}
+  - {fileID: 2100000, guid: c8378ba2eb3408c418f4ced06c019068, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217807938601063218}
-  m_Material: {fileID: 13400000, guid: d68d43128fc76a448b096832acb10b94, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -148,3 +149,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbf91710919e0e4ca141ff9fd730b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &-4912500418548029211
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217807938601063218}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294916352
+  m_Size: 1.31
