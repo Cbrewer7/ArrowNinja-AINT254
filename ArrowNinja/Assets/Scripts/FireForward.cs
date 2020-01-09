@@ -6,12 +6,10 @@ public class FireForward : MonoBehaviour
 {
 
     public GameObject arrow;
-    //public GameObject arrowSpawn;
     public float speed = 500f;
-    //public float mouseClick;
-
     public int currentArrows = 5;
 
+    //Lock Cursor to centre screen
     private void Start()
     {
         Cursor.lockState =  CursorLockMode.Locked;
@@ -32,7 +30,7 @@ public class FireForward : MonoBehaviour
     void ShootArrow()
     {
        
-
+        //If key is pressed and ammo is greater than 0
         if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFire && Ammo.ammmoAmount > 0)
         {
             //Prevents rapid fire by giving a next shot delay
@@ -42,13 +40,10 @@ public class FireForward : MonoBehaviour
             RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            //Lose 1 arrow
+            //Lose 1 arrow and ammo
             currentArrows--;
-
             Ammo.ammmoAmount -= 1;
-
-            //Debug.Log(currentArrows);
-
+            
             //If raycast is hits (information on raycast hit)
             if (Physics.Raycast(ray, out hit))
             {

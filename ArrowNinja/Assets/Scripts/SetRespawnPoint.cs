@@ -9,6 +9,7 @@ public class SetRespawnPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Set the respawn point to new location
         if(other.gameObject.tag == "Player")
         {
             respawnPoint.transform.position = respawnSet.transform.position;

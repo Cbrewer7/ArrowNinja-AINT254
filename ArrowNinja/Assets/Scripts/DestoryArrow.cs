@@ -21,16 +21,12 @@ public class DestoryArrow : MonoBehaviour
         {
             numOfjumps--;
 
+            //When the player Jumps on the arrow for the second time it destorys the arrow
             if (numOfjumps == 0)
             {
                 Destroy(gameObject);
             }
         }
-
-    }
-
-    private void PlayerInteraction()
-    {
 
     }
 }
