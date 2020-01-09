@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
             if (numberJumps != 0)
             {
                 verticalVelocity = -gravity * Time.deltaTime;
+
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     numberJumps = 0;

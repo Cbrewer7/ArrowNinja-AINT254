@@ -1,4 +1,6 @@
-﻿//This code was thanks to MakingMagic
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+//This code was thanks to MakingMagic
 //https://www.youtube.com/watch?v=_E6NbLucJ2Y
 
 
@@ -37,7 +39,7 @@ Shader "Glow" {
 
 	v2f vert(vertIn v) {
 		v2f o;
-		o.pos = mul(UNITY_MATRIX_MVP, v.pos);
+		o.pos = UnityObjectToClipPos(v.pos);
 		o.tex = v.tex * _MainTex_ST.xy + _MainTex_ST.zw;
 		return o;
 	}
